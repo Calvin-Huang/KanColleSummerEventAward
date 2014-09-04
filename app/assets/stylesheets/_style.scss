@@ -1,0 +1,13 @@
+.certificates {
+  padding: 10px;
+  border-top: 1px solid #EDEDED;
+  border-bottom: 1px solid #EDEDED;
+
+  &:nth-child(2n) {
+    background-color: #FBFBFB;
+  }
+
+  &:hover {
+    background-color: #F0FDFB;
+  }
+}

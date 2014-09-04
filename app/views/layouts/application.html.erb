@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Empty</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>KanColle Summer Event Award</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all', data: {'turbolinks-track' => true} %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class="blog-masthead">
+  <div class="container">
+    <nav class="blog-nav">
+      <a class="blog-nav-item active" href="#">Home</a>
+      <a class="blog-nav-item" href="#">New features</a>
+      <a class="blog-nav-item" href="#">Press</a>
+      <a class="blog-nav-item" href="#">New hires</a>
+      <a class="blog-nav-item" href="#">About</a>
+    </nav>
+  </div>
+</div>
 
+<div class="container">
+  <%= yield %>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js" data-turbolinks-track="true" data-turbolinks-eval="false"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" data-turbolinks-track="true" data-turbolinks-eval="false"></script>
+<%= javascript_include_tag 'utilities', data: {'turbolinks-track' => true, 'turbolinks-eval' => false} %>
+<%= javascript_include_tag 'application', data: {'turbolinks-track' => true, 'turbolinks-eval' => false} %>
 </body>
 </html>

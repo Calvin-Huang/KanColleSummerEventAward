@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>管理後台</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <%= stylesheet_link_tag    'plugins/flatty/dark-theme', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'plugins/flatty/theme-colors', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="contrast-blue login contrast-background">
+
+<div class='middle-container'>
+  <div class='middle-row'>
+    <div class='middle-wrapper'>
+      <%= yield %>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js" data-turbolinks-track="true" data-turbolinks-eval="false"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" data-turbolinks-track="true" data-turbolinks-eval="false"></script>
+<%= javascript_include_tag 'utilities', data: {'turbolinks-track' => true, 'turbolinks-eval' => false} %>
+<%= javascript_include_tag 'admin', 'data-turbolinks-track' => true, 'data-turbolinks-eval' => false %>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<div class="col-xs-12">
+  <div class="box orange-border">
+    <div class="box-header orange-background">
+      <div class="title">新增 / 修改</div>
+    </div>
+    <div class="box-content">
+      <%= form_for [:admin, @kanmusu], html: {class: 'form'} do |f| %>
+        <div class="row">
+          <!-- for kanmusus's avatar -->
+          <div class="col-xs-6">
+            <div class="row">
+              <div class="col-xs-4">
+                <div class="box image-preview-box">
+                  <%= image_tag f.object.avatar.url(:large), class: 'img-responsive preview-image' %>
+                  <%= f.file_field :avatar, title: '選擇大頭照', class: 'btn-block' %>
+                </div>
+              </div>
+              <div class="col-xs-8">
+                <div class="box image-preview-box">
+                  <%= image_tag f.object.image, class: 'img-responsive preview-image' %>
+                  <%= f.file_field :image, title: '選擇照片', class: 'btn-block' %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="form-group">
+              <%= f.label :name, '名字' %>
+              <div class="controls">
+                <%= f.text_field :name, class: 'form-control', placeholder: '艦娘名字', data: {'rule-required' => true} %>
+              </div>
+            </div>
+            <div class="form-actions form-actions-padding-sm form-actions-padding-md form-actions-padding-lg">
+              <div class="row">
+                <div class="col-xs-12 text-right">
+                  <%= link_to :back, class: 'btn btn-default' do %>
+                    取消
+                  <% end %>
+                  <button type="submit" class="btn btn-danger">
+                    儲存
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

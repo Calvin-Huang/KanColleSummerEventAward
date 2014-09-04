@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  root to: 'certificates#index'
+
+  namespace :admin do
+    root to: 'home#index'
+
+    resources :kanmusus
+  end
+
+  resources :certificates
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

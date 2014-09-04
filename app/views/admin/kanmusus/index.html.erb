@@ -1,0 +1,51 @@
+<div class="col-xs-12">
+  <div class="box orange-border">
+    <div class="box-header orange-background">
+      <div class="title">艦娘列表</div>
+      <div class="actions">
+        <div class="btn-group">
+          <%= link_to '新增艦娘', new_admin_kanmusu_path, class: 'btn btn-success' %>
+        </div>
+      </div>
+    </div>
+    <div class="box-content">
+      <div class="responsive-table">
+        <div class="scrollable-area">
+          <table class="data-table table table-striped">
+            <thead>
+            <tr class="row">
+              <th class="col-xs-2">No.</th>
+              <th class="col-xs-4"></th>
+              <th class="col-xs-4">名字</th>
+              <th class="col-xs-2"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @kanmusus.each do |kanmusu| %>
+            <tr class="row">
+              <td class="col-xs-1">
+                <%= kanmusu.id %>
+              </td>
+              <td class="col-xs-4">
+                <%= image_tag kanmusu.avatar.url(:thumb) %>
+              </td>
+              <td class="col-xs-5">
+                <%= kanmusu.name %>
+              </td>
+              <td class="col-xs-2 text-right">
+                <%= link_to edit_admin_kanmusu_path(kanmusu), class: 'btn btn-default' do %>
+                <i class="fa fa-edit"></i>
+                <% end %>
+                <%= link_to admin_kanmusu_path(kanmusu), class: 'btn btn-danger', method: :delete do %>
+                <i class="fa fa-times"></i>
+                <% end %>
+              </td>
+            </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
